@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/WeedApp      
+          at: ~//Gitbook-Plugin-Json-Schema    
       - run:
           name: "Lint"
           command: yarn lint
@@ -43,10 +43,10 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/WeedApp     
+          at: ~//Gitbook-Plugin-Json-Schema   
       - run:
           name: "Test"
-          command: yarn test -- --ci
+          command: yarn test --ci
     environment:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 workflows:
