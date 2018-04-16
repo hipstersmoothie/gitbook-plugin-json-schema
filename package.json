@@ -28,6 +28,7 @@
   "dependencies": {
     "deepmerge": "2.1.0",
     "html": "1.0.0",
+    "jest-junit": "^3.6.0",
     "json-schema-ref-parser": "5.0.3",
     "lodash": "4.17.5"
   },
@@ -64,6 +65,13 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageDirectory": "<rootDir>/coverage"
   },
   "xo": {
     "extends": [

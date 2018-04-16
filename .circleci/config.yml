@@ -3,6 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+general:
+  artifacts:
+    - "coverage/"
 defaults: &defaults
   working_directory: ~/Gitbook-Plugin-Json-Schema
   docker:
@@ -37,7 +40,7 @@ jobs:
           at: ~//Gitbook-Plugin-Json-Schema    
       - run:
           name: "Lint"
-          command: yarn lint
+          command: yarn lint --format junit -o reports/junit/js-lint-results.xml
   test:
     <<: *defaults
     steps:
@@ -46,7 +49,8 @@ jobs:
           at: ~//Gitbook-Plugin-Json-Schema   
       - run:
           name: "Test"
-          command: yarn test --ci
+          command: yarn test --ci --testResultsProcessor="jest-junit"
+      - run: curl -s https://codecov.io/bash | bash -s -- -t bcdc47ce-a69a-41fd-8084-32c0e3951229
     environment:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 workflows:
