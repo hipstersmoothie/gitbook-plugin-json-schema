@@ -5,10 +5,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/Gitbook-Plugin-Json-Schema
     docker:
       - image: circleci/node:8.9.4
-      
-    working_directory: ~/plugin
 
     steps:
       - checkout
