@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/alisowski/.nvm/versions/node/v9.11.1/bin/node /Users/alisowski/.nvm/versions/node/v9.11.1/bin/yarn lint
+  /Users/alisowski/.nvm/versions/node/v9.11.1/bin/node /Users/alisowski/.nvm/versions/node/v9.11.1/bin/yarn test
 
 PATH: 
   /Users/alisowski/.nvm/versions/node/v9.11.1/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/coreutils/libexec/gnubin
@@ -17,22 +17,22 @@ npm manifest:
   {
     "name": "gitbook-plugin-json-schema",
     "version": "20.0.0",
-    "description": "Gitbook plugin to convert JSON schema to markdown documentation",
+    "description":
+      "Gitbook plugin to convert JSON schema to markdown documentation",
     "main": "./dist/gitbook.compat.wrapper.js",
     "module": "./dist/module/index.js",
     "scripts": {
       "test": "jest",
       "build": "run-p build:*",
       "build:module": "babel src -d dist/module",
-      "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
+      "build:commonjs":
+        "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
       "lint": "xo"
     },
     "engines": {
       "gitbook": ">=3.0.0"
     },
-    "files": [
-      "dist"
-    ],
+    "files": ["dist"],
     "private": true,
     "repository": {
       "type": "git",
@@ -50,6 +50,7 @@ npm manifest:
       "babel-cli": "6.26.0",
       "babel-core": "6.26.0",
       "babel-eslint": "8.2.2",
+      "babel-jest": "22.4.3",
       "babel-preset-env": "^1.6.1",
       "cross-env": "5.1.4",
       "eslint-plugin-jest": "21.15.0",
@@ -60,21 +61,12 @@ npm manifest:
       "xo": "0.20.3"
     },
     "babel": {
-      "preset": [
-        "env"
-      ]
+      "preset": [["env", { "modules": "commonjs" }]]
     },
     "xo": {
-      "extends": [
-        "prettier"
-      ],
-      "plugins": [
-        "prettier",
-        "jest"
-      ],
-      "envs": [
-        "jest"
-      ],
+      "extends": ["prettier"],
+      "plugins": ["prettier", "jest"],
+      "envs": ["jest"],
       "parser": "babel-eslint",
       "rules": {
         "no-else-return": [
@@ -664,7 +656,7 @@ Lockfile:
       babel-runtime "^6.22.0"
       babel-template "^6.24.1"
   
-  babel-jest@^22.4.3:
+  babel-jest@22.4.3, babel-jest@^22.4.3:
     version "22.4.3"
     resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-22.4.3.tgz#4b7a0b6041691bbd422ab49b3b73654a49a6627a"
     dependencies:
@@ -6982,7 +6974,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c xo
+  Arguments: -c jest
   Directory: /Users/alisowski/Documents/gitbook-plugin-json-schema
   Output:
   

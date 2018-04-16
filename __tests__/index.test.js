@@ -121,7 +121,7 @@ test('schema - links bundled', done => {
     });
 });
 
-test.skip('schema - not bundled', done => {
+test('schema - not bundled', done => {
   plugin.hooks.init
     .bind({
       options: {
@@ -138,7 +138,7 @@ test.skip('schema - not bundled', done => {
     });
 });
 
-test.skip('schema - not bundled - deep', done => {
+test('schema - not bundled - deep', done => {
   plugin.hooks.init
     .bind({
       options: {
