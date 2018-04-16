@@ -50,7 +50,7 @@ jobs:
       - run:
           name: "Test"
           command: yarn test --ci --testResultsProcessor="jest-junit"
-      - run: curl -s https://codecov.io/bash | bash -s -- -t bcdc47ce-a69a-41fd-8084-32c0e3951229
+      - run: curl -s https://codecov.io/bash | bash -s -- -t c252af62-2e6f-4541-bf64-958e80fc2c56
     environment:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 workflows:
