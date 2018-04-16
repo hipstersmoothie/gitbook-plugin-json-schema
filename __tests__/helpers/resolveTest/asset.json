@@ -1,0 +1,45 @@
+{
+  "id": "asset",
+  "type": "object",
+  "required": ["id", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description":
+        "A unique identifier for the asset, used for automation testing and runtime tracing. Must be alphanumeric (beginning with alpha), underscore or dash only."
+    },
+    "type": {
+      "type": "string",
+      "description":
+        "Name of the supported asset types, can be image, text, composite, etc."
+    },
+    "applicability": {
+      "type": "string",
+      "description":
+        "An expressions that is used to determine if the asset should be visible or hidden. The expressions must result in either true or false, if true then the asset will be 'applicable' to the view rendering, if false it will be hidden and will not participate in any data validation or changes."
+    },
+    "metaData": {
+      "$ref": "metaData.json"
+    },
+    "template": {
+      "type": "object"
+    },
+    "templateData": {
+      "type": "string"
+    },
+    "templateOutput": {
+      "type": "string"
+    },
+    "_serviceParams": {
+      "type": ["object", "array"]
+    },
+    "_comment": {
+      "type": "string"
+    }
+  },
+  "dependencies": {
+    "template": ["templateData", "templateOutput"],
+    "templateData": ["template", "templateOutput"],
+    "templateOutput": ["template", "templateData"]
+  }
+}

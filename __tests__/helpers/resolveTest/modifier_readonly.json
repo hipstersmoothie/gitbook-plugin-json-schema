@@ -1,0 +1,27 @@
+{
+  "id": "modifier_readonly",
+  "type": "object",
+  "title": "Read Only",
+  "description": "Input value should be masked, like a password entry.",
+  "required": ["type", "value"],
+  "defaultSnippets": [
+    {
+      "label": "Read Only",
+      "description": "Input value should be masked, like a password entry.",
+      "body": {
+        "type": "tag",
+        "value": "readonly"
+      }
+    }
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["input"]
+    },
+    "value": {
+      "type": "string",
+      "enum": ["readonly"]
+    }
+  }
+}

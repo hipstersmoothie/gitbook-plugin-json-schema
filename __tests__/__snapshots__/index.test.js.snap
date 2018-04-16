@@ -1,0 +1,953 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`findMatchingDefinitions 1`] = `
+Array [
+  Object {
+    "$id": "card",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "A representation of a person, company, organization, or place",
+    "properties": Object {
+      "additionalName": Object {
+        "items": Object {
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "adr": Object {
+        "$id": "Address",
+        "dependencies": Object {
+          "extended-address": Array [
+            "street-address",
+          ],
+          "post-office-box": Array [
+            "street-address",
+          ],
+        },
+        "description": "An Address following the convention of http://microformats.org/wiki/hcard",
+        "properties": Object {
+          "country-name": Object {
+            "type": "string",
+          },
+          "extended-address": Object {
+            "type": "string",
+          },
+          "locality": Object {
+            "type": "string",
+          },
+          "post-office-box": Object {
+            "type": "string",
+          },
+          "postal-code": Object {
+            "type": "string",
+          },
+          "region": Object {
+            "type": "string",
+          },
+          "street-address": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "locality",
+          "region",
+          "country-name",
+        ],
+        "type": "object",
+      },
+      "bday": Object {
+        "format": "date",
+        "type": "string",
+      },
+      "email": Object {
+        "properties": Object {
+          "type": Object {
+            "type": "string",
+          },
+          "value": Object {
+            "format": "email",
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "familyName": Object {
+        "type": "string",
+      },
+      "fn": Object {
+        "description": "Formatted Name",
+        "type": "string",
+      },
+      "geo": Object {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "description": "A geographical coordinate",
+        "id": "geo",
+        "properties": Object {
+          "latitude": Object {
+            "type": "number",
+          },
+          "longitude": Object {
+            "type": "number",
+          },
+        },
+        "type": "object",
+      },
+      "givenName": Object {
+        "type": "string",
+      },
+      "honorificPrefix": Object {
+        "items": Object {
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "honorificSuffix": Object {
+        "items": Object {
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "logo": Object {
+        "type": "string",
+      },
+      "nickname": Object {
+        "type": "string",
+      },
+      "org": Object {
+        "properties": Object {
+          "organizationName": Object {
+            "type": "string",
+          },
+          "organizationUnit": Object {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "photo": Object {
+        "type": "string",
+      },
+      "role": Object {
+        "type": "string",
+      },
+      "sound": Object {
+        "type": "string",
+      },
+      "tel": Object {
+        "properties": Object {
+          "type": Object {
+            "type": "string",
+          },
+          "value": Object {
+            "format": "phone",
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "tz": Object {
+        "type": "string",
+      },
+      "url": Object {
+        "format": "uri",
+        "type": "string",
+      },
+    },
+    "required": Array [
+      "familyName",
+      "givenName",
+    ],
+    "type": "object",
+  },
+]
+`;
+
+exports[`findMatchingDefinitions 2`] = `
+Array [
+  Object {
+    "$id": "Address",
+    "dependencies": Object {
+      "extended-address": Array [
+        "street-address",
+      ],
+      "post-office-box": Array [
+        "street-address",
+      ],
+    },
+    "description": "An Address following the convention of http://microformats.org/wiki/hcard",
+    "properties": Object {
+      "country-name": Object {
+        "type": "string",
+      },
+      "extended-address": Object {
+        "type": "string",
+      },
+      "locality": Object {
+        "type": "string",
+      },
+      "post-office-box": Object {
+        "type": "string",
+      },
+      "postal-code": Object {
+        "type": "string",
+      },
+      "region": Object {
+        "type": "string",
+      },
+      "street-address": Object {
+        "type": "string",
+      },
+    },
+    "required": Array [
+      "locality",
+      "region",
+      "country-name",
+    ],
+    "type": "object",
+  },
+]
+`;
+
+exports[`findMatchingDefinitions 3`] = `
+Array [
+  Object {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "A geographical coordinate",
+    "id": "geo",
+    "properties": Object {
+      "latitude": Object {
+        "type": "number",
+      },
+      "longitude": Object {
+        "type": "number",
+      },
+    },
+    "type": "object",
+  },
+]
+`;
+
+exports[`layout 1`] = `
+"
+  <h1>title</h1>
+  <p>description</p>
+  <h2>Structure</h2>
+  <h4>Required</h4>
+    required
+  <h4>Optional</h4>
+    optional
+  
+"
+`;
+
+exports[`layout 2`] = `
+"
+  <h1>title</h1>
+  <p>description</p>
+  <h2>Structure</h2>
+  <h4>Required</h4>
+    required
+  <h4>Optional</h4>
+    optional
+  
+"
+`;
+
+exports[`listItem 1`] = `
+"
+    <li>
+      <b>testItem</b>
+      <i>{something}</i>
+      
+      
+      
+    </li>
+  "
+`;
+
+exports[`listItem 2`] = `
+"
+    <li>
+      <b>testItem</b>
+      <i>{something}</i>
+      
+      <code>one,two,three</code>
+      
+    </li>
+  "
+`;
+
+exports[`omitProperties 1`] = `
+" <h1>Text</h1>
+
+<p>The text asset is the most basic type. Text assets are used to convey
+  one or part of a thought to a user. They can be used within any other asset,
+  but cannot contain other assets within.</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+  <li> <b>value</b>
+ <i>{string}</i>
+A string value representing a part or entire
+    thought</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+Extra data describing an asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+    </ul>
+  </li>
+  <li> <b>accessibility</b>
+ <i>{string}</i>
+A text value for accessibility support.
+    If not present, this will be inferred from the text value</li>
+  <li> <b>modifiers</b>
+ <i>{array}</i>
+
+  </li>
+</ul>"
+`;
+
+exports[`propertyList 1`] = `
+"
+  <ul>
+    
+    <li>
+      <b>testItem</b>
+      <i>{something}</i>
+      
+      
+      
+    </li>
+  
+    <li>
+      <b>testItem</b>
+      <i>{something}</i>
+      
+      <code>one,two,three</code>
+      
+    </li>
+  
+  </ul>
+"
+`;
+
+exports[`schema - config object 1`] = `
+" <h1>Text</h1>
+
+<p>The text asset is the most basic type. Text assets are used to convey
+  one or part of a thought to a user. They can be used within any other asset,
+  but cannot contain other assets within.</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+  <li> <b>value</b>
+ <i>{string}</i>
+A string value representing a part or entire
+    thought</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+Extra data describing an asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+    </ul>
+  </li>
+  <li> <b>template</b>
+ <i>{object}</i>
+
+    <ul></ul>
+  </li>
+  <li> <b>templateData</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>templateOutput</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>_serviceParams</b>
+ <i>{object,array}</i>
+
+  </li>
+  <li> <b>_comment</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>accessibility</b>
+ <i>{string}</i>
+A text value for accessibility support.
+    If not present, this will be inferred from the text value</li>
+  <li> <b>modifiers</b>
+ <i>{array}</i>
+
+  </li>
+</ul>"
+`;
+
+exports[`schema - config path 1`] = `
+" <h1>Input</h1>
+
+<p>This is the most generic way of gathering data. The input is bound to
+  a data model using the 'binding' property. Players can get field type information
+  from the 'schema' definition, thus to decide the input controls for visual
+  rendering.</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+  <li> <b>binding</b>
+ <i>{string}</i>
+Two-way data binding to a model field</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+Extra data describing an asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+      <li> <b>beacon</b>
+ <i>{string}</i>
+Additional beacon data that will be sent during
+        any field beacon event. This should not contain any PII.</li>
+      <li> <b>trim</b>
+ <i>{boolean}</i>
+If set, whitespace will be trimmed from the
+        input value before being set to the data model</li>
+      <li> <b>maxLength</b>
+ <i>{integer}</i>
+Maximum amount of characters that a user
+        can enter into the field.</li>
+      <li> <b>highlight</b>
+ <i>{object}</i>
+An object indicating that the field should
+        be highlighted and a corresponding message displayed with the field. highlight
+        indicates the type (error or warning) and message, a text string.
+        <ul></ul>
+      </li>
+    </ul>
+  </li>
+  <li> <b>template</b>
+ <i>{object}</i>
+
+    <ul></ul>
+  </li>
+  <li> <b>templateData</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>templateOutput</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>_serviceParams</b>
+ <i>{object,array}</i>
+
+  </li>
+  <li> <b>_comment</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>label</b>
+ <i>{undefined}</i>
+A text asset or grouping of text assets.</li>
+  <li> <b>note</b>
+ <i>{undefined}</i>
+A text asset or grouping of text assets.</li>
+  <li> <b>accessibility</b>
+ <i>{string}</i>
+A screen-reader friendly description
+    of the field.</li>
+  <li> <b>additionalInfo</b>
+ <i>{undefined}</i>
+Any asset or grouping of assets</li>
+  <li> <b>placeholder</b>
+ <i>{string}</i>
+Text used as a placeholder. Be aware
+    that XD typically favors using a note section instead of using placeholder
+    text.</li>
+  <li> <b>resultText</b>
+ <i>{undefined}</i>
+Any asset or grouping of assets</li>
+  <li> <b>help</b>
+ <i>{object}</i>
+This is a modifier on assets (input, choice,
+    ...) that allows for a help link to accompany the asset in the form of
+    a queston mark icon. This icon trails the asset.
+    <ul>
+      <li> <b>asset</b>
+ <i>{object}</i>
+
+        <ul>
+          <li> <b>id</b>
+ <i>{string}</i>
+UUID</li>
+          <li> <b>value</b>
+ <i>{undefined}</i>
+A text asset or grouping of text assets.</li>
+          <li> <b>accessibility</b>
+ <i>{string}</i>
+string used as accessibility text</li>
+          <li> <b>metaData</b>
+ <i>{undefined}</i>
+Associated data that describes the text
+            asset.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li> <b>modifiers</b>
+ <i>{array}</i>
+
+  </li>
+</ul>"
+`;
+
+exports[`schema - links bundled 1`] = `
+" <h1>card</h1>
+
+<p>A representation of a person, company, organization, or place</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>familyName</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>givenName</b>
+ <i>{string}</i>
+
+  </li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>fn</b>
+ <i>{string}</i>
+Formatted Name</li>
+  <li> <b>additionalName</b>
+ <i>{array}</i>
+
+  </li>
+  <li> <b>honorificPrefix</b>
+ <i>{array}</i>
+
+  </li>
+  <li> <b>honorificSuffix</b>
+ <i>{array}</i>
+
+  </li>
+  <li> <b>nickname</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>url</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>email</b>
+ <i>{object}</i>
+
+    <ul>
+      <li> <b>type</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>value</b>
+ <i>{string}</i>
+
+      </li>
+    </ul>
+  </li>
+  <li> <b>tel</b>
+ <i>{object}</i>
+
+    <ul>
+      <li> <b>type</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>value</b>
+ <i>{string}</i>
+
+      </li>
+    </ul>
+  </li>
+  <li> <b>adr</b>
+ <i>{object}</i>
+An Address following the convention of http://microformats.org/wiki/hcard
+    <ul>
+      <li> <b>post-office-box</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>extended-address</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>street-address</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>locality</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>region</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>postal-code</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>country-name</b>
+ <i>{string}</i>
+
+      </li>
+    </ul>
+  </li>
+  <li> <b>geo</b>
+ <i>{object}</i>
+A geographical coordinate
+    <ul>
+      <li> <b>latitude</b>
+ <i>{number}</i>
+
+      </li>
+      <li> <b>longitude</b>
+ <i>{number}</i>
+
+      </li>
+    </ul>
+  </li>
+  <li> <b>tz</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>photo</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>logo</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>sound</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>bday</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>title</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>role</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>org</b>
+ <i>{object}</i>
+
+    <ul>
+      <li> <b>organizationName</b>
+ <i>{string}</i>
+
+      </li>
+      <li> <b>organizationUnit</b>
+ <i>{string}</i>
+
+      </li>
+    </ul>
+  </li>
+</ul>"
+`;
+
+exports[`schema - not bundled - deep 1`] = `
+" <h1>Input</h1>
+
+<p>This is the most generic way of gathering data. The input is bound to
+  a data model using the 'binding' property. Players can get field type information
+  from the 'schema' definition, thus to decide the input controls for visual
+  rendering.</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+  <li> <b>binding</b>
+ <i>{string}</i>
+Two-way data binding to a model field</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+Extra data describing an asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+      <li> <b>beacon</b>
+ <i>{string}</i>
+Additional beacon data that will be sent during
+        any field beacon event. This should not contain any PII.</li>
+      <li> <b>trim</b>
+ <i>{boolean}</i>
+If set, whitespace will be trimmed from the
+        input value before being set to the data model</li>
+      <li> <b>maxLength</b>
+ <i>{integer}</i>
+Maximum amount of characters that a user
+        can enter into the field.</li>
+      <li> <b>highlight</b>
+ <i>{object}</i>
+An object indicating that the field should
+        be highlighted and a corresponding message displayed with the field. highlight
+        indicates the type (error or warning) and message, a text string.
+        <ul></ul>
+      </li>
+    </ul>
+  </li>
+  <li> <b>template</b>
+ <i>{object}</i>
+
+    <ul></ul>
+  </li>
+  <li> <b>templateData</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>templateOutput</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>_serviceParams</b>
+ <i>{object,array}</i>
+
+  </li>
+  <li> <b>_comment</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>label</b>
+ <i>{undefined}</i>
+Asset container for a field label.</li>
+  <li> <b>note</b>
+ <i>{undefined}</i>
+Asset container for a note.</li>
+  <li> <b>accessibility</b>
+ <i>{string}</i>
+A screen-reader friendly description
+    of the field.</li>
+  <li> <b>additionalInfo</b>
+ <i>{undefined}</i>
+Can contain additionalInfo, which
+    can be any asset legal for additionalInfo.</li>
+  <li> <b>placeholder</b>
+ <i>{string}</i>
+Text used as a placeholder. Be aware
+    that XD typically favors using a note section instead of using placeholder
+    text.</li>
+  <li> <b>resultText</b>
+ <i>{undefined}</i>
+Can contain resultText, which can be
+    any asset legal for resultText.</li>
+  <li> <b>help</b>
+ <i>{undefined}</i>
+A help icon for the field.</li>
+  <li> <b>modifiers</b>
+ <i>{array}</i>
+
+  </li>
+</ul>"
+`;
+
+exports[`schema - not bundled 1`] = `
+" <h1>field</h1>
+
+<p>undefined</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+Extra data describing an asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+      <li> <b>beacon</b>
+ <i>{string}</i>
+Additional beacon data that will be sent during
+        any field beacon event. This should not contain any PII.</li>
+    </ul>
+  </li>
+  <li> <b>template</b>
+ <i>{object}</i>
+
+    <ul></ul>
+  </li>
+  <li> <b>templateData</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>templateOutput</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>_serviceParams</b>
+ <i>{object,array}</i>
+
+  </li>
+  <li> <b>_comment</b>
+ <i>{string}</i>
+
+  </li>
+  <li> <b>label</b>
+ <i>{undefined}</i>
+Asset container for a field label.</li>
+  <li> <b>note</b>
+ <i>{undefined}</i>
+Asset container for a note.</li>
+  <li> <b>accessibility</b>
+ <i>{string}</i>
+A screen-reader friendly description
+    of the field.</li>
+  <li> <b>additionalInfo</b>
+ <i>{undefined}</i>
+Can contain additionalInfo, which
+    can be any asset legal for additionalInfo.</li>
+  <li> <b>placeholder</b>
+ <i>{string}</i>
+Text used as a placeholder. Be aware
+    that XD typically favors using a note section instead of using placeholder
+    text.</li>
+  <li> <b>resultText</b>
+ <i>{undefined}</i>
+Can contain resultText, which can be
+    any asset legal for resultText.</li>
+  <li> <b>help</b>
+ <i>{undefined}</i>
+A help icon for the field.</li>
+</ul>"
+`;

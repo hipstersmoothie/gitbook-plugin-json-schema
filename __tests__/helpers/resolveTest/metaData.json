@@ -1,0 +1,12 @@
+{
+  "id": "metaData",
+  "type": "object",
+  "additionalProperties": true,
+  "description": "Extra data describing an asset.",
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "A role assigned that gives it greater semantic meaning."
+    }
+  }
+}

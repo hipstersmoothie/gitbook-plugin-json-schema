@@ -1,0 +1,154 @@
+{
+  "id": "asset_input",
+  "title": "Input",
+  "description":
+    "This is the most generic way of gathering data. The input is bound to a data model using the 'binding' property. Players can get field type information from the 'schema' definition, thus to decide the input controls for visual rendering.",
+  "defaultSnippets": [
+    {
+      "label": "Input",
+      "description":
+        "This is the most generic way of gathering data. The input is bound to a data model using the 'binding' property. Players can get field type information from the 'schema' definition, thus to decide the input controls for visual rendering.",
+      "body": {
+        "id": "${1}",
+        "type": "input",
+        "binding": "${2}"
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "$ref": "__tests__/helpers/resolveTest/field.json"
+    },
+    {
+      "required": ["binding"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["input"]
+        },
+        "binding": {
+          "type": "string",
+          "description": "Two-way data binding to a model field"
+        },
+        "metaData": {
+          "type": "object",
+          "properties": {
+            "trim": {
+              "type": "boolean",
+              "description":
+                "If set, whitespace will be trimmed from the input value before being set to the data model"
+            },
+            "maxLength": {
+              "type": "integer",
+              "description":
+                "Maximum amount of characters that a user can enter into the field."
+            },
+            "highlight": {
+              "type": "object",
+              "description":
+                "An object indicating that the field should be highlighted and a corresponding message displayed with the field. highlight indicates the type (error or warning) and message, a text string."
+            },
+            "role": {
+              "type": "string",
+              "enum": [
+                "nameFirst",
+                "nameMiddleInitial",
+                "nameNickname",
+                "nameLast",
+                "nameSuffix",
+                "addressApt",
+                "addressCity",
+                "addressState",
+                "addressZip",
+                "addressCountry",
+                "addressStreet",
+                "phoneNumber",
+                "phoneExtension"
+              ],
+              "oneOf": [
+                {
+                  "enum": ["nameFirst"],
+                  "description":
+                    "For use within field collecton: name row (improve me)"
+                },
+                {
+                  "enum": ["nameMiddleInitial"],
+                  "description":
+                    "For use within field collecton: name row (improve me)"
+                },
+                {
+                  "enum": ["nameLast"],
+                  "description":
+                    "For use within field collecton: name row (improve me)"
+                },
+                {
+                  "enum": ["nameSuffix"],
+                  "description":
+                    "For use within field collecton: name row (improve me)"
+                },
+                {
+                  "enum": ["nameNickname"],
+                  "description":
+                    "For use within field collecton: name row (improve me)"
+                },
+                {
+                  "enum": ["addressApt"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["addressCity"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["addressState"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["addressZip"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["addressCountry"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["addressStreet"],
+                  "description":
+                    "For use within field collecton: address row (improve me)"
+                },
+                {
+                  "enum": ["phoneNumber"],
+                  "description": "for a phone number (improve me)"
+                },
+                {
+                  "enum": ["phoneExtension"],
+                  "description": "for a phone number extension (improve me)"
+                },
+                {
+                  "enum": ["date"],
+                  "description":
+                    "for fieldCollection consent role, puts inputs in a single row"
+                }
+              ]
+            }
+          }
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "__tests__/helpers/resolveTest/modifier_readonly.json"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

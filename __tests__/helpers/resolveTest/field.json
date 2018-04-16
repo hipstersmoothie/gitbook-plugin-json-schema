@@ -1,0 +1,47 @@
+{
+  "id": "field",
+  "allOf": [
+    {
+      "$ref": "asset.json"
+    },
+    {
+      "properties": {
+        "label": {
+          "description": "Asset container for a field label."
+        },
+        "note": {
+          "description": "Asset container for a note."
+        },
+        "accessibility": {
+          "type": "string",
+          "description": "A screen-reader friendly description of the field."
+        },
+        "additionalInfo": {
+          "description":
+            "Can contain additionalInfo, which can be any asset legal for additionalInfo."
+        },
+        "placeholder": {
+          "type": "string",
+          "description":
+            "Text used as a placeholder. Be aware that XD typically favors using a note section instead of using placeholder text."
+        },
+        "resultText": {
+          "description":
+            "Can contain resultText, which can be any asset legal for resultText."
+        },
+        "help": {
+          "description": "A help icon for the field."
+        },
+        "metaData": {
+          "properties": {
+            "beacon": {
+              "type": "string",
+              "description":
+                "Additional beacon data that will be sent during any field beacon event. This should not contain any PII."
+            }
+          }
+        }
+      }
+    }
+  ]
+}
