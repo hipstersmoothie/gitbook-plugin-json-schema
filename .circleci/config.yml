@@ -1,0 +1,66 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+general:
+  artifacts:
+    - "coverage/"
+defaults: &defaults
+  working_directory: ~/Gitbook-Plugin-Json-Schema
+  docker:
+    - image: circleci/node:8.9.4
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+              - .
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~//Gitbook-Plugin-Json-Schema    
+      - run:
+          name: "Lint"
+          command: yarn lint --format junit -o reports/junit/js-lint-results.xml
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~//Gitbook-Plugin-Json-Schema   
+      - run:
+          name: "Test"
+          command: yarn test --ci --testResultsProcessor="jest-junit"
+      - run: curl -s https://codecov.io/bash | bash -s -- -t c252af62-2e6f-4541-bf64-958e80fc2c56
+    environment:
+      TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - lint:
+          requires:
+              - build 
+      - test:
+          requires:
+              - build
