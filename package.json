@@ -1,22 +1,23 @@
 {
   "name": "gitbook-plugin-json-schema",
   "version": "20.0.0",
-  "description":
-    "Gitbook plugin to convert JSON schema to markdown documentation",
+  "description": "Gitbook plugin to convert JSON schema to markdown documentation",
   "main": "./dist/gitbook.compat.wrapper.js",
   "module": "./dist/module/index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "jest",
     "build": "run-p build:*",
     "build:module": "babel src -d dist/module",
-    "build:commonjs":
-      "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
     "lint": "xo"
   },
   "engines": {
     "gitbook": ">=3.0.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "private": true,
   "repository": {
     "type": "git",
@@ -41,18 +42,41 @@
     "eslint-plugin-jest": "21.15.0",
     "eslint-plugin-prettier": "2.6.0",
     "gitbook-tester": "1.4.3",
+    "husky": "^0.14.3",
     "jest": "22.4.3",
+    "lint-staged": "^7.0.4",
     "npm-run-all": "4.1.2",
+    "prettier": "1.12.0",
     "xo": "0.20.3"
   },
   "babel": {
-    "presets": ["env"],
-    "plugins": ["transform-object-rest-spread"]
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "xo": {
-    "extends": ["prettier"],
-    "plugins": ["prettier", "jest"],
-    "envs": ["jest"],
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier",
+      "jest"
+    ],
+    "envs": [
+      "jest"
+    ],
     "parser": "babel-eslint",
     "rules": {
       "no-else-return": [
