@@ -129,3 +129,7 @@ export default roleTable;
 Which generates:
 
 ![Plugin Example](pluginExample.png)
+
+# Contributing / Bug Reporting
+
+I built this to work with simple schemas and a very complex specific schema, so there might be patterns that aren't covered by the plugin. For these cases please file an [Issue](https://github.com/hipstersmoothie/gitbook-plugin-json-schema/issues) or a [Pull Request](https://github.com/hipstersmoothie/gitbook-plugin-json-schema/pulls).
