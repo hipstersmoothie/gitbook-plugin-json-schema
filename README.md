@@ -16,7 +16,7 @@ Simply provide an id that exists somewhere in your schema.
 
 The plugin will generate docs that describe the required and optional properties.
 
-![Card Docs Example Image](cardDocs.png)
+![Card Docs Example Image](images/cardDocs.png)
 
 ## Configuration
 
@@ -128,4 +128,4 @@ export default roleTable;
 
 Which generates:
 
-![Plugin Example](pluginExample.png)
+![Plugin Example](images/pluginExample.png)
