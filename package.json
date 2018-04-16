@@ -41,7 +41,6 @@
     "cross-env": "5.1.4",
     "eslint-plugin-jest": "21.15.0",
     "eslint-plugin-prettier": "2.6.0",
-    "gitbook-tester": "1.4.3",
     "husky": "^0.14.3",
     "jest": "22.4.3",
     "lint-staged": "^7.0.4",
