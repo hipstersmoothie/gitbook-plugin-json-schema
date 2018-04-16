@@ -1,4 +1,7 @@
-# Gitbook Plugin: JSON-Schema [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![CircleCI](https://circleci.com/gh/hipstersmoothie/gitbook-plugin-json-schema/tree/master.svg?style=svg)](https://circleci.com/gh/hipstersmoothie/gitbook-plugin-json-schema/tree/master)
+# Gitbook Plugin: JSON-Schema
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser/master.svg?style=for-the-badge)](https://circleci.com/gh/hipstersmoothie/gitbook-plugin-json-schema/tree/master)
 
 This plugin for [Gitbook](https://github.com/GitbookIO/gitbook) takes a [JSON-Schema](http://json-schema.org/) and exposes a [block](https://toolchain.gitbook.com/plugins/blocks.html) that matches [ids](http://json-schema.org/latest/json-schema-core.html#id-keyword) to autogenerates docs.
 
