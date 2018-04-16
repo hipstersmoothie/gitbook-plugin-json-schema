@@ -5,12 +5,12 @@ import plugin, {
   layout,
   schema,
   findMatchingDefinitions
-} from '../src/index';
+} from '../src';
 
-import testSchema from './helpers/testSchema.json';
-import complexSchema from './helpers/complexTestSchema.json';
-import bundleTest from './helpers/bundleTestSchema.json';
-import assetInput from './helpers/resolveTest/asset_input.json';
+import testSchema from './helpers/testSchema';
+import complexSchema from './helpers/complexTestSchema';
+import bundleTest from './helpers/bundleTestSchema';
+import assetInput from './helpers/resolveTest/asset_input';
 
 test('listItem', () => {
   expect(listItem({ name: 'testItem', type: 'something' })).toMatchSnapshot();
