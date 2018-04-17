@@ -12,7 +12,7 @@ import testSchema from './helpers/testSchema';
 import complexSchema from './helpers/complexTestSchema';
 import bundleTest from './helpers/bundleTestSchema';
 import assetInput from './helpers/resolveTest/asset_input';
-import anyOfTest from './helpers/anyOfTest.json';
+import anyOfTest from './helpers/anyOfTest';
 
 test('listItem', () => {
   expect(listItem({ name: 'testItem', type: 'something' })).toMatchSnapshot();
