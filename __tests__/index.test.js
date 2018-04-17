@@ -216,5 +216,4 @@ test('plugins', () => {
   })();
 
   expect(schema('asset_labeledText')).toMatchSnapshot();
-  // expect(schema('asset_text')).not.toMatch('_serviceParams');
 });

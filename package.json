@@ -87,6 +87,7 @@
     "parser": "babel-eslint",
     "rules": {
       "unicorn/import-index": 0,
+      "unicorn/no-abusive-eslint-disable": 0,
       "no-else-return": [
         "error",
         {
