@@ -12,6 +12,7 @@ import testSchema from './helpers/testSchema';
 import complexSchema from './helpers/complexTestSchema';
 import bundleTest from './helpers/bundleTestSchema';
 import assetInput from './helpers/resolveTest/asset_input';
+import anyOfTest from './helpers/anyOfTest';
 
 test('listItem', () => {
   expect(listItem({ name: 'testItem', type: 'something' })).toMatchSnapshot();
@@ -56,6 +57,20 @@ test('layout', () => {
       plugins: ['roles', 'modifiers']
     })
   ).toMatchSnapshot();
+
+  expect(
+    layout({
+      required: 'required',
+      optional: 'optional'
+    })
+  ).toMatchSnapshot();
+
+  expect(
+    layout({
+      title: 'title',
+      description: 'description'
+    })
+  ).toMatchSnapshot();
 });
 
 test('resolveSchema', () => {
@@ -77,6 +92,28 @@ test('findMatchingDefinitions', () => {
   expect(findMatchingDefinitions(complexSchema, 'modifier_compact')[0].id).toBe(
     'modifier_compact'
   );
+});
+
+test('schema - easy', () => {
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema: {
+            id: 'foo',
+            properties: {
+              bar: {
+                type: 'string'
+              }
+            }
+          }
+        }
+      }
+    }
+  })();
+
+  expect(schema('foobar')).toMatchSnapshot();
 });
 
 test('schema - no match', () => {
@@ -175,6 +212,22 @@ test('schema - not bundled - deep', done => {
     });
 });
 
+test('schema - error', () => {
+  expect(
+    plugin.hooks.init.bind({
+      options: {
+        pluginsConfig: {
+          'json-schema': {
+            schema: null
+          }
+        }
+      }
+    })()
+  ).rejects.toMatchObject({
+    message: 'Expected a file path, URL, or object. Got null'
+  });
+});
+
 test('omitProperties', () => {
   plugin.hooks.init.bind({
     options: {
@@ -196,6 +249,21 @@ test('omitProperties', () => {
 
   expect(schema('asset_text')).toMatchSnapshot();
   expect(schema('asset_text')).not.toMatch('_serviceParams');
+});
+
+test('resolveSchema - anyOf', () => {
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema: anyOfTest
+        }
+      }
+    }
+  })();
+
+  expect(resolveSchema(anyOfTest)).toMatchSnapshot();
 });
 
 test('plugins', () => {

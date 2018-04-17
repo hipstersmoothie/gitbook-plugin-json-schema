@@ -255,6 +255,30 @@ exports[`layout 2`] = `
 "
 `;
 
+exports[`layout 3`] = `
+"
+  
+  
+  <h2>Structure</h2>
+  <h4>Required</h4>
+    required
+  <h4>Optional</h4>
+    optional
+  
+"
+`;
+
+exports[`layout 4`] = `
+"
+  <h1>title</h1>
+  <p>description</p>
+  
+  
+  
+  
+"
+`;
+
 exports[`listItem 1`] = `
 "
     <li>
@@ -454,6 +478,83 @@ exports[`propertyList 1`] = `
   
   </ul>
 "
+`;
+
+exports[`resolveSchema - anyOf 1`] = `
+Object {
+  "$id": "anyOfTest",
+  "anyOf": Array [
+    Object {
+      "allOf": Array [
+        Object {
+          "$ref": "#/definitions/baz",
+        },
+        Object {
+          "properties": Object {
+            "anotherProp": Object {
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "anotherProp",
+          ],
+        },
+      ],
+      "properties": Object {
+        "anotherProp": Object {
+          "type": "string",
+        },
+        "yetAnotherProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "yetAnotherProp",
+        "anotherProp",
+      ],
+    },
+    Object {
+      "properties": Object {
+        "firstProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "firstProp",
+      ],
+    },
+  ],
+  "definitions": Object {
+    "baz": Object {
+      "properties": Object {
+        "yetAnotherProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "yetAnotherProp",
+      ],
+    },
+    "foo": Object {
+      "allOf": Array [
+        Object {
+          "$ref": "#/definitions/baz",
+        },
+        Object {
+          "properties": Object {
+            "anotherProp": Object {
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "anotherProp",
+          ],
+        },
+      ],
+    },
+  },
+  "type": "object",
+}
 `;
 
 exports[`schema - config object 1`] = `
@@ -668,6 +769,24 @@ Associated data that describes the text
   </li>
   <li> <b>modifiers</b>
  <i>{array}</i>
+
+  </li>
+</ul>"
+`;
+
+exports[`schema - easy 1`] = `
+" <h1>foo</h1>
+
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul></ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>bar</b>
+ <i>{string}</i>
 
   </li>
 </ul>"
@@ -961,7 +1080,6 @@ A help icon for the field.</li>
 exports[`schema - not bundled 1`] = `
 " <h1>field</h1>
 
-<p>undefined</p>
  <h2>Structure</h2>
 
  <h4>Required</h4>

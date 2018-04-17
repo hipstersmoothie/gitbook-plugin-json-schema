@@ -61,6 +61,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
+      "xo --fix",
       "prettier --write",
       "git add"
     ]
