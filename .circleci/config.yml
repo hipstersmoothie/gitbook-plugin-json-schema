@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
-  build:
+  install:
     <<: *defaults
     steps:
       - checkout
@@ -59,30 +59,47 @@ jobs:
       - run: curl -s https://codecov.io/bash | bash -s -- -t c252af62-2e6f-4541-bf64-958e80fc2c56
     environment:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~//Gitbook-Plugin-Json-Schema    
+      - run:
+          name: "Build"
+          command: yarn build
 workflows:
   version: 2
   build_test_deploy:
     jobs:
-      - build:
+      - install:
           filters:
             tags:
               only: /.*/
       - lint:
           requires:
-              - build
+              - install
           filters:
             tags:
               only: /.*/
       - test:
           requires:
-              - build
+              - install
           filters:
             tags:
               only: /.*/
+      - build:
+          requires:
+              - lint
+              - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
       - publish:
           requires:
-            - lint
-            - test
+            - build
           filters:
             tags:
               only: /^v.*/
