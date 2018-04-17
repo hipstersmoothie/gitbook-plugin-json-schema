@@ -456,6 +456,83 @@ exports[`propertyList 1`] = `
 "
 `;
 
+exports[`resolveSchema - anyOf 1`] = `
+Object {
+  "$id": "anyOfTest",
+  "anyOf": Array [
+    Object {
+      "allOf": Array [
+        Object {
+          "$ref": "#/definitions/baz",
+        },
+        Object {
+          "properties": Object {
+            "anotherProp": Object {
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "anotherProp",
+          ],
+        },
+      ],
+      "properties": Object {
+        "anotherProp": Object {
+          "type": "string",
+        },
+        "yetAnotherProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "yetAnotherProp",
+        "anotherProp",
+      ],
+    },
+    Object {
+      "properties": Object {
+        "firstProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "firstProp",
+      ],
+    },
+  ],
+  "definitions": Object {
+    "baz": Object {
+      "properties": Object {
+        "yetAnotherProp": Object {
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "yetAnotherProp",
+      ],
+    },
+    "foo": Object {
+      "allOf": Array [
+        Object {
+          "$ref": "#/definitions/baz",
+        },
+        Object {
+          "properties": Object {
+            "anotherProp": Object {
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "anotherProp",
+          ],
+        },
+      ],
+    },
+  },
+  "type": "object",
+}
+`;
+
 exports[`schema - config object 1`] = `
 " <h1>Text</h1>
 

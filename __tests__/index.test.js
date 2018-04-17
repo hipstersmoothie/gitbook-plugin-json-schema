@@ -198,6 +198,64 @@ test('omitProperties', () => {
   expect(schema('asset_text')).not.toMatch('_serviceParams');
 });
 
+test('resolveSchema - anyOf', () => {
+  const schema = {
+    $id: 'anyOfTest',
+    type: 'object',
+    anyOf: [
+      {
+        $ref: '#/definitions/foo'
+      },
+      {
+        required: ['firstProp'],
+        properties: {
+          firstProp: {
+            type: 'string'
+          }
+        }
+      }
+    ],
+    definitions: {
+      foo: {
+        allOf: [
+          {
+            $ref: '#/definitions/baz'
+          },
+          {
+            required: ['anotherProp'],
+            properties: {
+              anotherProp: {
+                type: 'string'
+              }
+            }
+          }
+        ]
+      },
+      baz: {
+        required: ['yetAnotherProp'],
+        properties: {
+          yetAnotherProp: {
+            type: 'string'
+          }
+        }
+      }
+    }
+  };
+
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema
+        }
+      }
+    }
+  })();
+
+  expect(resolveSchema(schema)).toMatchSnapshot();
+});
+
 test('plugins', () => {
   plugin.hooks.init.bind({
     options: {
