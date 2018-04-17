@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-json-schema",
-  "version": "20.0.0",
+  "version": "0.0.1",
   "description": "Gitbook plugin to convert JSON schema to markdown documentation",
   "main": "./dist/gitbook.compat.wrapper.js",
   "module": "./dist/module/index.js",
