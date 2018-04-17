@@ -219,12 +219,9 @@ export default {
 
       if (config.plugins) {
         _.map(config.plugins, (render, propertyName) => {
-          fs.readFile(render, 'utf8', (err, data) => {
-            if (err) throw err;
-            // Load renderer
-            // eslint-disable-next-line no-eval
-            plugins[propertyName] = eval(data);
-          });
+          const plugin = fs.readFileSync(render, 'utf8');
+          // eslint-disable-next-line no-eval
+          plugins[propertyName] = eval(plugin);
         });
       }
 

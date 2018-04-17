@@ -251,7 +251,7 @@ exports[`layout 2`] = `
     required
   <h4>Optional</h4>
     optional
-  
+  rolesmodifiers
 "
 `;
 
@@ -333,6 +333,103 @@ A text value for accessibility support.
 
   </li>
 </ul>"
+`;
+
+exports[`plugins 1`] = `
+" <h1>Labeled Text</h1>
+
+<p>The labeledText asset is a complex text asset that contains a label, some
+  text, an additionalInfo section, and actions.</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul>
+  <li> <b>id</b>
+ <i>{string}</i>
+A unique identifier for the asset, used for automation
+    testing and runtime tracing. Must be alphanumeric (beginning with alpha),
+    underscore or dash only.</li>
+  <li> <b>type</b>
+ <i>{string}</i>
+Name of the supported asset types, can be image,
+    text, composite, etc.</li>
+  <li> <b>content</b>
+ <i>{undefined}</i>
+Any asset or grouping of assets</li>
+</ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>applicability</b>
+ <i>{string}</i>
+An expressions that is used to determine
+    if the asset should be visible or hidden. The expressions must result in
+    either true or false, if true then the asset will be 'applicable' to the
+    view rendering, if false it will be hidden and will not participate in
+    any data validation or changes.</li>
+  <li> <b>metaData</b>
+ <i>{object}</i>
+An object to further describe the asset.
+    <ul>
+      <li> <b>role</b>
+ <i>{string}</i>
+A role assigned that gives it greater semantic
+        meaning.</li>
+      <li> <b>size</b>
+ <i>{string}</i>
+Controls the amount of space the labeled text
+        occupies in a fieldCollection. Values 'small', 'medium', and 'large' are
+        supported.</li>
+    </ul>
+  </li>
+  <li> <b>label</b>
+ <i>{undefined}</i>
+A text asset or grouping of text assets.</li>
+  <li> <b>additionalInfo</b>
+ <i>{undefined}</i>
+Any asset or grouping of assets</li>
+  <li> <b>actions</b>
+ <i>{array}</i>
+An array of action assets that can be performed
+    on the labeledText.</li>
+  <li> <b>modifiers</b>
+ <i>{array}</i>
+
+  </li>
+</ul>
+ <h4>Role</h4>
+
+<table>
+  <thead>
+    <tr>
+      <td>Role</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>spotlight</td>
+      <td>used when the labeledText needs greater focus.</td>
+    </tr>
+    <tr>
+      <td>addressStreet</td>
+      <td>used when the labeledText is in a fieldCollection address. (improve me)</td>
+    </tr>
+    <tr>
+      <td>addressCity</td>
+      <td>used when the labeledText is in a fieldCollection address. (improve me)</td>
+    </tr>
+    <tr>
+      <td>addressState</td>
+      <td>used when the labeledText is in a fieldCollection address. (improve me)</td>
+    </tr>
+    <tr>
+      <td>addressZip</td>
+      <td>used when the labeledText is in a fieldCollection address. (improve me)</td>
+    </tr>
+  </tbody>
+</table>"
 `;
 
 exports[`propertyList 1`] = `
@@ -740,6 +837,8 @@ A geographical coordinate
   </li>
 </ul>"
 `;
+
+exports[`schema - no match 1`] = `"<div />"`;
 
 exports[`schema - not bundled - deep 1`] = `
 " <h1>Input</h1>
