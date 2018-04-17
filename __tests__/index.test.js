@@ -12,6 +12,7 @@ import testSchema from './helpers/testSchema';
 import complexSchema from './helpers/complexTestSchema';
 import bundleTest from './helpers/bundleTestSchema';
 import assetInput from './helpers/resolveTest/asset_input';
+import anyOfTest from './helpers/anyOfTest.json';
 
 test('listItem', () => {
   expect(listItem({ name: 'testItem', type: 'something' })).toMatchSnapshot();
@@ -77,6 +78,28 @@ test('findMatchingDefinitions', () => {
   expect(findMatchingDefinitions(complexSchema, 'modifier_compact')[0].id).toBe(
     'modifier_compact'
   );
+});
+
+test('schema - easy', () => {
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema: {
+            id: 'foo',
+            properties: {
+              bar: {
+                type: 'string'
+              }
+            }
+          }
+        }
+      }
+    }
+  })();
+
+  expect(schema('foobar')).toMatchSnapshot();
 });
 
 test('schema - no match', () => {
@@ -175,6 +198,22 @@ test('schema - not bundled - deep', done => {
     });
 });
 
+test('schema - error', () => {
+  expect(
+    plugin.hooks.init.bind({
+      options: {
+        pluginsConfig: {
+          'json-schema': {
+            schema: null
+          }
+        }
+      }
+    })()
+  ).rejects.toMatchObject({
+    message: 'Expected a file path, URL, or object. Got null'
+  });
+});
+
 test('omitProperties', () => {
   plugin.hooks.init.bind({
     options: {
@@ -199,61 +238,18 @@ test('omitProperties', () => {
 });
 
 test('resolveSchema - anyOf', () => {
-  const schema = {
-    $id: 'anyOfTest',
-    type: 'object',
-    anyOf: [
-      {
-        $ref: '#/definitions/foo'
-      },
-      {
-        required: ['firstProp'],
-        properties: {
-          firstProp: {
-            type: 'string'
-          }
-        }
-      }
-    ],
-    definitions: {
-      foo: {
-        allOf: [
-          {
-            $ref: '#/definitions/baz'
-          },
-          {
-            required: ['anotherProp'],
-            properties: {
-              anotherProp: {
-                type: 'string'
-              }
-            }
-          }
-        ]
-      },
-      baz: {
-        required: ['yetAnotherProp'],
-        properties: {
-          yetAnotherProp: {
-            type: 'string'
-          }
-        }
-      }
-    }
-  };
-
   plugin.hooks.init.bind({
     options: {
       pluginsConfig: {
         'json-schema': {
           bundled: true,
-          schema
+          schema: anyOfTest
         }
       }
     }
   })();
 
-  expect(resolveSchema(schema)).toMatchSnapshot();
+  expect(resolveSchema(anyOfTest)).toMatchSnapshot();
 });
 
 test('plugins', () => {

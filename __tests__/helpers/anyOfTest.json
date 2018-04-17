@@ -1,0 +1,42 @@
+{
+  "$id": "anyOfTest",
+  "type": "object",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/foo"
+    },
+    {
+      "required": ["firstProp"],
+      "properties": {
+        "firstProp": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "foo": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/baz"
+        },
+        {
+          "required": ["anotherProp"],
+          "properties": {
+            "anotherProp": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "baz": {
+      "required": ["yetAnotherProp"],
+      "properties": {
+        "yetAnotherProp": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

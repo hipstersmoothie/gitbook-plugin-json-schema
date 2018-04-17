@@ -129,7 +129,7 @@ function escapeRegExp(string) {
 
 export const findMatchingDefinitions = (schema, identifier) => {
   if (!_.isObject(schema)) {
-    return;
+    return [];
   }
 
   const id = schema.$id || schema.id;
@@ -169,9 +169,8 @@ const resolveWhole = (definition, levels = 3) => {
 
 const getRootDefinition = identifier => {
   const definitions = findMatchingDefinitions(bundledSchema, identifier);
-  const definition = definitions ? definitions[0] : {};
 
-  return resolveSchema(definition);
+  return resolveSchema(definitions[0]);
 };
 
 export function schema(key) {
@@ -244,7 +243,7 @@ export default {
           bundledSchema = schema;
         })
         .catch(err => {
-          console.error(err);
+          throw err;
         });
     }
   },

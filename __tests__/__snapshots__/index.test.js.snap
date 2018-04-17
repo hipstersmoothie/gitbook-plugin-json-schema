@@ -750,6 +750,25 @@ Associated data that describes the text
 </ul>"
 `;
 
+exports[`schema - easy 1`] = `
+" <h1>foo</h1>
+
+<p>undefined</p>
+ <h2>Structure</h2>
+
+ <h4>Required</h4>
+
+<ul></ul>
+ <h4>Optional</h4>
+
+<ul>
+  <li> <b>bar</b>
+ <i>{string}</i>
+
+  </li>
+</ul>"
+`;
+
 exports[`schema - links bundled 1`] = `
 " <h1>card</h1>
 
