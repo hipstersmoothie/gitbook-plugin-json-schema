@@ -61,14 +61,6 @@ jobs:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 workflows:
   version: 2
-  tagged-build:
-    jobs:
-      - publish:
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
   build_and_test:
     jobs:
       - build
@@ -78,3 +70,13 @@ workflows:
       - test:
           requires:
               - build
+  tagged-build:
+    jobs:
+      - publish:
+          requires:
+            - build_and_test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
