@@ -18,7 +18,6 @@
   "files": [
     "dist"
   ],
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.intuit.com/Fuego/Fuego-Schema.git"
