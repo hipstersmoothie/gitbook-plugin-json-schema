@@ -12,8 +12,7 @@ defaults: &defaults
     - image: circleci/node:8.9.4
 jobs:
   publish:
-    docker:
-      - image: circleci/<language>:<version TAG>
+    <<: *defaults
     steps:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
