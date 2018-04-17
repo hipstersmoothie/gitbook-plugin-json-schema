@@ -57,7 +57,6 @@ export const resolveSchema = definition => {
   }
 
   if (definition.anyOf) {
-    // TODO REVISIT ME
     definition.anyOf = _.map(definition.anyOf, def => {
       if (def.$ref) {
         const resolved = resolveRef(def);
@@ -67,8 +66,6 @@ export const resolveSchema = definition => {
       return def;
     });
   }
-
-  // TODO SUPPORT ONEOF
 
   return definition;
 };
