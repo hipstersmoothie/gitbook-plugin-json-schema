@@ -17,7 +17,7 @@ Simply provide an id that exists somewhere in your schema.
 
 The plugin will generate docs that describe the required and optional properties.
 
-![Card Docs Example Image](images/cardDocs.png)
+![Card Docs Example Image](https://raw.githubusercontent.com/hipstersmoothie/gitbook-plugin-json-schema/master/images/cardDocs.png)
 
 ## Configuration
 
@@ -129,7 +129,7 @@ export default roleTable;
 
 Which generates:
 
-![Plugin Example](images/pluginExample.png)
+![Plugin Example](https://raw.githubusercontent.com/hipstersmoothie/gitbook-plugin-json-schema/master/images/pluginExample.png)
 
 # Contributing / Bug Reporting
 
