@@ -4,6 +4,7 @@ import plugin, {
   propertyList,
   layout,
   schema,
+  resolveSchema,
   findMatchingDefinitions
 } from '../src';
 
@@ -52,10 +53,13 @@ test('layout', () => {
       description: 'description',
       required: 'required',
       optional: 'optional',
-      modifiers: 'modifiers',
-      roles: 'roles'
+      plugins: ['roles', 'modifiers']
     })
   ).toMatchSnapshot();
+});
+
+test('resolveSchema', () => {
+  expect(resolveSchema(null)).toBeNull();
 });
 
 test('findMatchingDefinitions', () => {
@@ -66,12 +70,28 @@ test('findMatchingDefinitions', () => {
   expect(findMatchingDefinitions(complexSchema, 'asset_text')[0].id).toBe(
     'asset_text'
   );
+
   expect(
     findMatchingDefinitions(complexSchema, 'asset_landingTable')[0].id
   ).toBe('asset_landingTable');
   expect(findMatchingDefinitions(complexSchema, 'modifier_compact')[0].id).toBe(
     'modifier_compact'
   );
+});
+
+test('schema - no match', () => {
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema: complexSchema
+        }
+      }
+    }
+  })();
+
+  expect(schema('foobar')).toMatchSnapshot();
 });
 
 test('schema - config object', () => {
@@ -176,4 +196,25 @@ test('omitProperties', () => {
 
   expect(schema('asset_text')).toMatchSnapshot();
   expect(schema('asset_text')).not.toMatch('_serviceParams');
+});
+
+test('plugins', () => {
+  plugin.hooks.init.bind({
+    options: {
+      pluginsConfig: {
+        'json-schema': {
+          bundled: true,
+          schema: complexSchema,
+          plugins: {
+            'metaData.properties.role': path.resolve(
+              '__tests__/helpers/examplePlugin.js'
+            )
+          }
+        }
+      }
+    }
+  })();
+
+  expect(schema('asset_labeledText')).toMatchSnapshot();
+  // expect(schema('asset_text')).not.toMatch('_serviceParams');
 });

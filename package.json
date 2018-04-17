@@ -70,7 +70,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "coverageDirectory": "<rootDir>/coverage"
+    "coverageDirectory": "<rootDir>/coverage",
+    "testPathIgnorePatterns": ["/node_modules/", "/__tests__/helpers/"]
   },
   "xo": {
     "extends": [
