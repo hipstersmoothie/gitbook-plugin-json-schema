@@ -255,6 +255,30 @@ exports[`layout 2`] = `
 "
 `;
 
+exports[`layout 3`] = `
+"
+  
+  
+  <h2>Structure</h2>
+  <h4>Required</h4>
+    required
+  <h4>Optional</h4>
+    optional
+  
+"
+`;
+
+exports[`layout 4`] = `
+"
+  <h1>title</h1>
+  <p>description</p>
+  
+  
+  
+  
+"
+`;
+
 exports[`listItem 1`] = `
 "
     <li>

@@ -57,6 +57,20 @@ test('layout', () => {
       plugins: ['roles', 'modifiers']
     })
   ).toMatchSnapshot();
+
+  expect(
+    layout({
+      required: 'required',
+      optional: 'optional'
+    })
+  ).toMatchSnapshot();
+
+  expect(
+    layout({
+      title: 'title',
+      description: 'description'
+    })
+  ).toMatchSnapshot();
 });
 
 test('resolveSchema', () => {
