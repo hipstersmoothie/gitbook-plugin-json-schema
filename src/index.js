@@ -109,13 +109,21 @@ export const propertyList = items => `
 `;
 
 export const layout = ({ title, description, required, optional, plugins }) => `
-  <h1>${title}</h1>
-  <p>${description}</p>
-  <h2>Structure</h2>
-  <h4>Required</h4>
-    ${required}
-  <h4>Optional</h4>
-    ${optional}
+  ${title ? `<h1>${title}</h1>` : ''}
+  ${description ? `<p>${description}</p>` : ''}
+  ${required || optional ? `<h2>Structure</h2>` : ''}
+  ${
+    required
+      ? `<h4>Required</h4>
+    ${required}`
+      : ''
+  }
+  ${
+    optional
+      ? `<h4>Optional</h4>
+    ${optional}`
+      : ''
+  }
   ${plugins ? plugins.map(plugin => plugin).join('') : ''}
 `;
 

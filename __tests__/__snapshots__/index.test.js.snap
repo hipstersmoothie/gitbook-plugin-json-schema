@@ -753,7 +753,6 @@ Associated data that describes the text
 exports[`schema - easy 1`] = `
 " <h1>foo</h1>
 
-<p>undefined</p>
  <h2>Structure</h2>
 
  <h4>Required</h4>
@@ -1057,7 +1056,6 @@ A help icon for the field.</li>
 exports[`schema - not bundled 1`] = `
 " <h1>field</h1>
 
-<p>undefined</p>
  <h2>Structure</h2>
 
  <h4>Required</h4>
