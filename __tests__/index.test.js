@@ -20,7 +20,7 @@ test('listItem', () => {
       type: 'something',
       values: ['one', { title: 'two' }, 'three']
     })
-  ).toBe(4);
+  ).toMatchSnapshot();
 });
 
 test('propertyList', () => {
