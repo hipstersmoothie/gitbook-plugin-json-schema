@@ -3,7 +3,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/hipstersmoothie/gitbook-plugin-json-schema/master.svg?style=for-the-badge)](https://circleci.com/gh/hipstersmoothie/gitbook-plugin-json-schema/tree/master)
 [![Codecov branch](https://img.shields.io/codecov/c/github/hipstersmoothie/gitbook-plugin-json-schema/master.svg?style=for-the-badge)](https://codecov.io/gh/hipstersmoothie/gitbook-plugin-json-schema)
-[![npm](https://img.shields.io/npm/v/gitbook-plugin-json-schema.svg?style=for-the-badge)](https://www.npmjs.com/package/gitbook-plugin-json-schema)
+[![npm](https://img.shields.io/npm/v/gitbook-plugin-json-schema.svg?style=for-the-badge)](https://www.npmjs.com/package/gitbook-plugin-json-schema) ![David](https://img.shields.io/david/hipstersmoothie/gitbook-plugin-json-schema.svg?style=for-the-badge) ![David](https://img.shields.io/david/dev/hipstersmoothie/gitbook-plugin-json-schema.svg?style=for-the-badge)
 
 This plugin for [Gitbook](https://github.com/GitbookIO/gitbook) takes a [JSON-Schema](http://json-schema.org/) and exposes a [block](https://toolchain.gitbook.com/plugins/blocks.html) that matches [ids](http://json-schema.org/latest/json-schema-core.html#id-keyword) to autogenerates docs.
 
