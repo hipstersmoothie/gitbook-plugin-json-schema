@@ -24,6 +24,19 @@
   },
   "author": "Andrew Lisowski",
   "license": "UNLICENSED",
+  "keywords": [
+    "json",
+    "schema",
+    "json-schema",
+    "gitbook",
+    "gitbook-plugin",
+    "block",
+    "id",
+    "auto",
+    "documentation",
+    "autodoc",
+    "documentation tool"
+  ],
   "dependencies": {
     "deepmerge": "2.1.0",
     "html": "1.0.0",
