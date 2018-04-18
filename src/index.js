@@ -4,9 +4,12 @@ import deepmerge from 'deepmerge';
 import { prettyPrint } from 'html';
 import $RefParser from 'json-schema-ref-parser';
 
+const plugins = {};
+
+let traverseObjects = false;
+let traverseDepth = 3;
 let bundledSchema = {};
 let OMIT_PROPERTIES = [];
-const plugins = {};
 
 const resolveRef = value => {
   if (!value.$ref) {
@@ -155,10 +158,11 @@ export const findMatchingDefinitions = (schema, identifier) => {
   return found;
 };
 
-const resolveWhole = (definition, levels = 3) => {
+const resolveWhole = (definition, levels = traverseDepth) => {
   if (levels === 0) {
     return definition;
   }
+
   if (!_.isObject(definition)) {
     return definition;
   }
@@ -166,6 +170,10 @@ const resolveWhole = (definition, levels = 3) => {
   definition = resolveSchema(definition);
 
   _.map(definition, (schemaDef, key) => {
+    if (!traverseObjects) {
+      return definition;
+    }
+
     definition[key] = resolveWhole(schemaDef, levels - 1);
   });
 
@@ -220,6 +228,12 @@ export default {
   hooks: {
     init() {
       const config = this.options.pluginsConfig['json-schema'];
+
+      traverseObjects = config.traverseObjects;
+
+      if (config.traverseDepth) {
+        traverseDepth = config.traverseDepth;
+      }
 
       if (config.plugins) {
         _.map(config.plugins, (render, propertyName) => {
