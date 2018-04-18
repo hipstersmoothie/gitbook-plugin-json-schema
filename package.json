@@ -11,7 +11,7 @@
     "build": "run-p build:*",
     "build:module": "babel src -d dist/module",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
-    "release": "npm version $1 && git push --follow-tags && release"
+    "release": "run(){ npm version $1 && git push --follow-tags && release; }; run"
   },
   "engines": {
     "gitbook": ">=3.0.0"
