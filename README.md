@@ -76,6 +76,21 @@ Globally omit properties that are included in all of your schema.
 }
 ```
 
+### Traverse Objects
+
+Set to true if you want properties that are objects to display their own property list.
+
+```json
+{
+  "pluginsConfig": {
+    "json-schema": {
+      "traverseObjects": true,
+      ...
+    }
+  }
+}
+```
+
 ### Plugins
 
 Transform some property in your schema into a more complex UI component. To do this you can map the property key (or path to the key) to a render function. Top level property keys are omitted from the required and optional lists.
