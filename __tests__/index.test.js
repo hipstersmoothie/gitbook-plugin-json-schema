@@ -136,6 +136,7 @@ test('schema - config object', () => {
     options: {
       pluginsConfig: {
         'json-schema': {
+          traverseObjects: true,
           bundled: true,
           schema: complexSchema
         }
@@ -151,6 +152,7 @@ test('schema - config path', () => {
     options: {
       pluginsConfig: {
         'json-schema': {
+          traverseObjects: true,
           bundled: true,
           schema: path.resolve(__dirname, './helpers/complexTestSchema.json')
         }
@@ -167,6 +169,7 @@ test('schema - links bundled', done => {
       options: {
         pluginsConfig: {
           'json-schema': {
+            traverseObjects: true,
             schema: bundleTest
           }
         }
@@ -184,6 +187,7 @@ test('schema - not bundled', done => {
       options: {
         pluginsConfig: {
           'json-schema': {
+            traverseObjects: true,
             schema: assetInput
           }
         }
@@ -201,6 +205,7 @@ test('schema - not bundled - deep', done => {
       options: {
         pluginsConfig: {
           'json-schema': {
+            traverseObjects: true,
             schema: assetInput
           }
         }
@@ -233,6 +238,7 @@ test('omitProperties', () => {
     options: {
       pluginsConfig: {
         'json-schema': {
+          traverseObjects: true,
           bundled: true,
           schema: complexSchema,
           omitProperties: [
@@ -271,6 +277,7 @@ test('plugins', () => {
     options: {
       pluginsConfig: {
         'json-schema': {
+          traverseObjects: true,
           bundled: true,
           schema: complexSchema,
           plugins: {
