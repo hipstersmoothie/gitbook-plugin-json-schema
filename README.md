@@ -148,6 +148,16 @@ Which generates:
 
 ![Plugin Example](https://raw.githubusercontent.com/hipstersmoothie/gitbook-plugin-json-schema/master/images/pluginExample.png)
 
+# Releasing
+
+Run the `release` script with new version number (e.g 1.1.0)
+
+```
+npm run release -- 1.1.0
+```
+
+Mark each commit as either patch, minor or major. A tag is then created for the release, release notes are generated, and a release is published to github.
+
 # Contributing / Bug Reporting
 
 I built this to work with simple schemas and a very complex specific schema, so there might be patterns that aren't covered by the plugin. For these cases please file an [Issue](https://github.com/hipstersmoothie/gitbook-plugin-json-schema/issues) or a [Pull Request](https://github.com/hipstersmoothie/gitbook-plugin-json-schema/pulls).
