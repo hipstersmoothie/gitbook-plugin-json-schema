@@ -7,10 +7,11 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "jest",
+    "lint": "xo",
     "build": "run-p build:*",
     "build:module": "babel src -d dist/module",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d dist --copy-files",
-    "lint": "xo"
+    "release": "echo $1 | echo bar"
   },
   "engines": {
     "gitbook": ">=3.0.0"
@@ -41,7 +42,8 @@
     "deepmerge": "2.1.0",
     "html": "1.0.0",
     "json-schema-ref-parser": "5.0.3",
-    "lodash": "4.17.5"
+    "lodash": "4.17.5",
+    "release": "^3.1.7"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
