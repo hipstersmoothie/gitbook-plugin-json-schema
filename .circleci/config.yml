@@ -86,7 +86,8 @@ workflows:
               only: /.*/
       - publish:
           requires:
-            - build
+            - lint
+            - test
           filters:
             tags:
               only: /^v.*/
